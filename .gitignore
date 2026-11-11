@@ -30,4 +30,3 @@ credentials.*
 *_secret.*
 *tavily*
 # <<< credential-guard (security audit) <<<
-/backend/
