@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeOS</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icons/icon-192.png" type="image/png">
+    <meta name="theme-color" content="#4f46e5">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Unauthenticated View -->
+        <div id="unauthenticated-view" class="unauth-view">
+            <header class="app-header">
+                <div class="container">
+                    <h1 class="logo">LifeOS</h1>
+                    <div class="auth-buttons">
+                        <button id="signin-btn" class="btn btn-outline">Sign In</button>
+                        <button id="signup-btn" class="btn btn-primary">Sign Up</button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="unauth-main">
+                <div class="container">
+                    <div class="welcome-section">
+                        <h2>Welcome to LifeOS</h2>
+                        <p>Your personal digital workspace</p>
+                        <div class="welcome-actions">
+                            <button id="get-started" class="btn btn-primary btn-large">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Authenticated View (Hidden by default) -->
+        <div id="authenticated-view" class="auth-view" style="display: none;">
+            <header class="app-header">
+                <div class="container">
+                    <h1 class="logo">LifeOS</h1>
+                    <div class="user-info">
+                        <span id="user-email"></span>
+                        <button id="logout-btn" class="btn btn-outline">Logout</button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="app-main">
+                <div class="container">
+                    <div class="canvas-container">
+                        <div class="canvas-header">
+                            <h2>Your Workspace</h2>
+                            <div class="canvas-actions">
+                                <button id="new-note" class="btn btn-outline">New Note</button>
+                                <button id="new-task" class="btn btn-outline">New Task</button>
+                            </div>
+                        </div>
+                        <div id="workspace-canvas" class="workspace-canvas">
+                            <!-- Blank canvas area -->
+                            <div class="canvas-placeholder">
+                                <p>Your workspace is empty</p>
+                                <p>Start by creating a note or task</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Sign In</h2>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div id="auth-error" class="error-message"></div>
+                    <button type="submit" id="auth-submit" class="btn btn-primary">Sign In</button>
+                </form>
+                <div class="auth-switch">
+                    <span id="switch-text">Don't have an account?</span>
+                    <button id="switch-auth" class="btn-link">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
